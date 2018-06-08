@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+onst Discord = require("discord.js");
 const client = new Discord.Client();
 
 function clean(text) {
@@ -13,8 +13,8 @@ var token = "NDU0NTEzMDgwOTE5OTE2NTQ2.Dfuhzw.qm1VipeLgFG0868TfXuxmBPmxk0"
 var message1 = "Our ticket team will be with you ASAP!";
 
 client.on("ready", () => {
-  console.log("CashCord | Logged in! Server count: ${client.guilds.size}");
-  client.user.setGame(`+help  | Ticketpro BETA v0.0.1`);
+  console.log("TicketPro | Logged in! Server count:");
+  client.user.setGame(`+help  | Ticketpro BETA`);
 });
 
 client.on("guildCreate", (guild) => {
@@ -51,6 +51,12 @@ if (message.content.toLowerCase().startsWith(prefix + `about`)) {
     m.edit(`TicketPro was launched in June 2018 by nolan#0002 as a ticket system thats completly free and customisable!`);
     });
 }
+
+if (message.content.toLowerCase().startsWith(prefix + `guilds`)) {
+    message.channel.send(`Grabbing...`).then(m => {
+    m.edit(`Guild count: `);
+    });
+}
 if (message.content.toLowerCase().startsWith(prefix + `setmessage`)) {
    // const message2 = args.join(" ");
     message.channel.sendMessage(`Coming soon!`);
@@ -60,7 +66,7 @@ if (message.content.toLowerCase().startsWith(prefix + `setmessage`)) {
 if (message.content.toLowerCase().startsWith(prefix + `new`)) {
     const reason = message.content.split(" ").slice(1).join(" ");
     if (!message.guild.roles.exists("name", "Ticket Team")) return message.channel.send(`This server doesn't have a \`Ticket Team\` role made, so the game channel won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
-    if (message.guild.channels.exists("name", "ticketpro-" + message.author.id)) return message.channel.send(`You already have a ticket  open.`);
+    if (message.guild.channels.exists("name", "ticketpro-" + message.author.id)) return message.channel.send(`:x: You already have a ticket open.`);
     message.guild.createChannel(`ticketpro-${message.author.id}`, "text").then(c => {
         let role = message.guild.roles.find("name", "Ticket Team");
         let role2 = message.guild.roles.find("name", "@everyone");
