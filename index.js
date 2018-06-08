@@ -14,12 +14,13 @@ var message1 = "Our ticket team will be with you ASAP!";
 
 client.on("ready", () => {
   console.log("CashCord | Logged in! Server count: ${client.guilds.size}");
-  client.user.setGame(`+help  | Ticketpro BETA`);
+  client.user.setGame(`+help  | Ticketpro BETA v0.0.1`);
 });
 
 client.on("guildCreate", (guild) => {
 client.user.setGame(`+help | Ticketpro BETA`);
     guild.owner.user.send(`Thanks for adding Ticket Pro, the ticket bot reinvented! +help`);
+    message.channel.sendMessage(`Thanks for adding Ticket Pro, the ticket bot reinvented! +help`);
 });
 
 client.on("message", (message) => {
