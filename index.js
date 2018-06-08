@@ -47,7 +47,7 @@ if (message.content.toLowerCase().startsWith(prefix + `invite`)) {
 }
 if (message.content.toLowerCase().startsWith(prefix + `about`)) {
     message.channel.send(`what`).then(m => {
-    m.edit(`TicketPro was launched in June 2018 as a ticket system thats completly free and customisable!`);
+    m.edit(`TicketPro was launched in June 2018 by nolan#0002 as a ticket system thats completly free and customisable!`);
     });
 }
 if (message.content.toLowerCase().startsWith(prefix + `setmessage`)) {
